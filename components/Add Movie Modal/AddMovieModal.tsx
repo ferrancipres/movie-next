@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Modal } from "../Modal/Modal";
 import "./AddMovieModal.css";
 import { createMovie } from "@/actions/movie.actions";
+import { useRouter } from "next/navigation";
 
 type AddMovieModalProps = {
   isOpen: boolean;
@@ -25,6 +26,7 @@ export const AddMovieModal: React.FC<AddMovieModalProps> = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
   const { register, handleSubmit, reset, formState } = useForm<FormValues>();
+  const router = useRouter();
 
   const handleCloseModal = () => {
     if (onClose) {
@@ -36,15 +38,8 @@ export const AddMovieModal: React.FC<AddMovieModalProps> = ({
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     const userId = user.user.id;
     if (userId) await createMovie(data, userId);
+    router.refresh();
   };
-
-  // useEffect(() => {
-  //   if (formState.isSubmitSuccessful) {
-  //     reset({ name: "", score: "", poster_image: "", genres: [] });
-  //     handleCloseModal();
-  //     location.reload();
-  //   }
-  // }, [formState, reset]);
 
   return (
     <Modal hasCloseBtn={true} isOpen={isOpen} onClose={onClose}>

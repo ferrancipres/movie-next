@@ -18,10 +18,9 @@ export default withPageAuthRequired(async () => {
 
   if (session && session.user) {
     const { name, email } = session.user;
-    console.log("email", email);
-    console.log("name", name);
     const user: User = (await setUser(name, email)) as User;
     const dataBaseUser: any = await getMovieByUser(user.email);
+
     return (
       <>
         <h3>user Profile</h3>

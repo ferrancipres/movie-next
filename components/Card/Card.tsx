@@ -2,6 +2,7 @@ import { MovieTMB } from "@/app/models";
 import "./Card.css";
 import Image from "next/image";
 import Link from "next/link";
+import DeleteButton from "../Delete Button/DeleteButton";
 
 interface Props {
   data: MovieTMB;
@@ -51,6 +52,17 @@ export function Card({ data }: Props) {
 }
 
 export function CardForProfile({ data }: PropsforProfile) {
+  const handleDelete = async () => {
+    const res = await fetch(`/api/movie/${data.id}`, {
+      method: "DELETE",
+    });
+    if (res.ok) {
+    }
+  };
+
+  console.log("data", data.id);
+  console.log("data", data.name);
+  console.log("data", data);
   return (
     <div className="Card">
       {/* <Link href={`/${data.id}`}> */}
@@ -61,9 +73,9 @@ export function CardForProfile({ data }: PropsforProfile) {
           alt={data.name}
         /> */}
       <p>{data.name}</p>
+      <DeleteButton id={data.id} />
       {/* </Link> */}
       {/* <p>Created: {data.release_date}</p> */}
-
       {/* <p>Popularity: {data.popularity}</p>
       <p>Any: {data.adult}</p>
       <p>Any: {data.backdrop_path}</p>
