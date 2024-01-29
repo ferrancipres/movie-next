@@ -52,26 +52,15 @@ export function Card({ data }: Props) {
 }
 
 export function CardForProfile({ data }: PropsforProfile) {
-  const handleDelete = async () => {
-    const res = await fetch(`/api/movie/${data.id}`, {
-      method: "DELETE",
-    });
-    if (res.ok) {
-    }
-  };
-
-  console.log("data", data.id);
-  console.log("data", data.name);
-  console.log("data", data);
   return (
     <div className="Card">
       {/* <Link href={`/${data.id}`}> */}
       {/* <Image
-          src={`${data.poster_image}`}
-          width={250}
-          height={300}
-          alt={data.name}
-        /> */}
+        src={`${data.poster_image}`}
+        width={250}
+        height={300}
+        alt={data.name}
+      /> */}
       <p>{data.name}</p>
       <DeleteButton id={data.id} />
       {/* </Link> */}
