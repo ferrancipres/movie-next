@@ -15,12 +15,14 @@ const handleUpdate = async (
   data: any,
   router: AppRouterInstance
 ) => {
-  const res = await updateMovie(data, id);
+  const res = await updateMovie(data);
   if (typeof res === "string") return "Can't update movie";
   if (typeof res !== "string") router.refresh();
 };
 
 const UpdateButton: FC<Props> = ({ id, data }) => {
+  console.log("dataButton", data);
+  console.log("id", id);
   const router = useRouter();
   const handleClick = () => handleUpdate(id, data, router);
   return (

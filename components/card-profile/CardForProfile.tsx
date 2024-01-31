@@ -29,6 +29,8 @@ export function CardForProfile({ data, user }: PropsforProfile) {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+  console.log(data);
+
   return (
     <div>
       <div className="card__profile__container">
@@ -48,6 +50,7 @@ export function CardForProfile({ data, user }: PropsforProfile) {
             user={user}
             isOpen={isModalOpen}
             onClose={handleCloseModal}
+            id={data.id}
           />
         </div>
       </div>

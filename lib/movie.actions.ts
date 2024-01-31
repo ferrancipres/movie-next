@@ -58,12 +58,13 @@ export const createMovie = async (data: any, userId: string) => {
 };
 
 //update movie
-export const updateMovie = async (data: any, id: string) => {
-    const { name, poster_image, score, genres } = data;
+export const updateMovie = async (data: any) => {
+    const { name, poster_image, score, genres, id } = data;
+
 
     try {
         const updatedMovie = await prisma.movies.update({
-            where: {id},
+            where: {id: id},
             data: {
                 name,
                 poster_image,
@@ -78,7 +79,6 @@ export const updateMovie = async (data: any, id: string) => {
                         },
                     },
                 },
-                User: { connect: { id } },
             },
             include: {
                 genres: {

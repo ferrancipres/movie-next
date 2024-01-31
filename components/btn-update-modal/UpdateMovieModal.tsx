@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 type AddMovieModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  id: string;
   user: {
     user: any;
     id: string;
@@ -33,6 +34,7 @@ export const UpdateMovieModal: React.FC<AddMovieModalProps> = ({
   isOpen,
   onClose,
   user,
+  id,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
   const {
@@ -51,9 +53,11 @@ export const UpdateMovieModal: React.FC<AddMovieModalProps> = ({
   };
 
   const onSubmit: SubmitHandler<FormValues> = async (data: FormProps) => {
-    const userId = user.user.id;
-    console.log();
-    if (userId) await updateMovie(data, userId);
+    console.log("DataSubmit", data, id);
+    const dataFull = { ...data, id };
+    console.log("DataFull", dataFull);
+
+    await updateMovie(dataFull);
     router.refresh();
     handleCloseModal();
     reset();
