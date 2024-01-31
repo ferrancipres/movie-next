@@ -1,21 +1,22 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import "./Footer.css";
+import Link from "next/link";
 
 function Footer() {
   return (
     <div className="section__container">
       <footer className="footer-container">
         <section className="social-icons">
-          <a className="icon-social" href="#red-social-1" target="_blank">
+          <Link className="icon-social" href="#red-social-1" target="_blank">
             <FaFacebook />
-          </a>
-          <a className="icon-social" href="#red-social-2" target="_blank">
+          </Link>
+          <Link className="icon-social" href="#red-social-2" target="_blank">
             <FaTwitter />
-          </a>
-          <a className="icon-social" href="#red-social-3" target="_blank">
+          </Link>
+          <Link className="icon-social" href="#red-social-3" target="_blank">
             <FaInstagram />
-          </a>
+          </Link>
         </section>
         <section className="info-wrapper">
           <p>Conditions of use</p>
