@@ -1,4 +1,4 @@
-export interface MovieTMB {
+export interface movieTMB {
     poster_path: string;
     adult: boolean;
     overview: string;

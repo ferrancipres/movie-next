@@ -1,10 +1,11 @@
 import { PrismaClient } from "@/prisma/generated/mongodb_client";
+const prisma = new PrismaClient();
 
+// Get user by email
 export const getUserByEmail = async (email:string) => {
-    const prisma = new PrismaClient();
     try {
         const user = await prisma.user.findUnique({
-            where: { email: email },
+            where: { email},
             include: {
                 movies: {
                     include: {
@@ -17,22 +18,23 @@ export const getUserByEmail = async (email:string) => {
         });
         return user;
     } catch (error) {
-        return error;
+        console.error(error);
     }
 };
 
+// Create user
 export const createUser = async (name: string, email:string) => {
-    const prisma = new PrismaClient();
     try {
         const newUser = await prisma.user.create({
             data: { name, email },
         });
         return newUser;
     } catch (error) {
-        return error;
+        console.error(error);
     }
 };
 
+// Get session user
 export const setUser = async (name: string, email:string) => {
     const user = await getUserByEmail(email);
     if(!user){

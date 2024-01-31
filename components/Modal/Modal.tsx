@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
 import "./Modal.css";
+import React from "react";
 import { useState, useEffect, useRef } from "react";
+import { FC } from "react";
+import { MdOutlineClose } from "react-icons/md";
 
 type ModalProps = {
   isOpen: boolean;
@@ -11,7 +13,7 @@ type ModalProps = {
   children: React.ReactNode;
 };
 
-export const Modal: React.FC<ModalProps> = ({
+export const Modal: FC<ModalProps> = ({
   isOpen,
   hasCloseBtn,
   onClose,
@@ -49,12 +51,17 @@ export const Modal: React.FC<ModalProps> = ({
   };
 
   return (
-    <dialog ref={modalRef} className="modal" onKeyDown={handleKeyDown}>
+    <dialog
+      ref={modalRef}
+      className="modal__container"
+      onKeyDown={handleKeyDown}
+    >
       {hasCloseBtn && (
-        <button className="modal-close-btn" onClick={handleCloseModal}>
-          X
+        <button type="button" className="btn__close" onClick={handleCloseModal}>
+          <MdOutlineClose />
         </button>
       )}
+      <h3 className="btn__description">Add your favourite movie: </h3>
       {children}
     </dialog>
   );

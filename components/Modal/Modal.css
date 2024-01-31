@@ -1,17 +1,29 @@
-.modal {
-    margin: 0 auto;
-    margin-top: 12rem;
+.modal__container {
+    margin: 25rem auto;
     width: 30rem;
     height: 40rem;
-    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(139, 138, 138, 0.137);
+    outline: 2px solid black;
+    z-index: 100;
+    position: fixed;
+    background-color:rgb(230, 225, 225)
 }
 
-.modal-close-btn {
-    margin: 1rem;
+.btn__close {
+    margin: 1rem 1rem 2rem 1rem;
     font-size: 1.4rem;
-    width: 20px;
-    height: 20px;
-    color: var(--secondary);
+    width: 2px;
+    color: rgb(0, 0, 0);
     background-color: transparent;
-    font-weight: var(--fw-bold);
+}
+
+.btn__description {
+    font-size: 1rem;
+    text-align: left;
+    font-weight: normal;
+    padding-left: 30px;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+
 }

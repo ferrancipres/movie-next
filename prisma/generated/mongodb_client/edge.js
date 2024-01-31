@@ -32,11 +32,11 @@ exports.$Enums = {}
 
 /**
  * Prisma Client JS version: 5.8.0
- * Query Engine version: 78caf6feeaed953168c64e15a249c3e9a033ebe2
+ * Query Engine version: 23fdc5965b1e05fc54e5f26ed3de66776b93de64
  */
 Prisma.prismaVersion = {
   client: "5.8.0",
-  engine: "78caf6feeaed953168c64e15a249c3e9a033ebe2"
+  engine: "23fdc5965b1e05fc54e5f26ed3de66776b93de64"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -133,7 +133,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Ferran\\Documents\\Assembler\\Portfolio\\movie-hub-front-next\\prisma\\generated\\mongodb_client",
+      "value": "C:\\Users\\Ferran\\Documents\\Assembler\\Portfolio\\movie-next\\prisma\\generated\\mongodb_client",
       "fromEnvVar": null
     },
     "config": {
@@ -155,7 +155,7 @@ const config = {
   },
   "relativePath": "../..",
   "clientVersion": "5.8.0",
-  "engineVersion": "78caf6feeaed953168c64e15a249c3e9a033ebe2",
+  "engineVersion": "23fdc5965b1e05fc54e5f26ed3de66776b93de64",
   "datasourceNames": [
     "db"
   ],
@@ -169,8 +169,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "Z2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgICA9ICIuL2dlbmVyYXRlZC9tb25nb2RiX2NsaWVudCIKfQoKZGF0YXNvdXJjZSBkYiB7CiAgcHJvdmlkZXIgPSAibW9uZ29kYiIKICB1cmwgICAgICA9IGVudigiTU9OR09fREJfVVJJIikKfQoKbW9kZWwgVXNlciB7CiAgaWQgICAgIFN0cmluZyAgIEBpZCBAZGVmYXVsdChhdXRvKCkpIEBtYXAoIl9pZCIpIEBkYi5PYmplY3RJZAogIGVtYWlsICBTdHJpbmcgICBAdW5pcXVlCiAgbmFtZSAgIFN0cmluZwogIG1vdmllcyBNb3ZpZXNbXQp9Cgptb2RlbCBNb3ZpZXMgewogIGlkICAgICAgICAgICBTdHJpbmcgICAgICAgICAgIEBpZCBAZGVmYXVsdChhdXRvKCkpIEBtYXAoIl9pZCIpIEBkYi5PYmplY3RJZAogIG5hbWUgICAgICAgICBTdHJpbmcKICBzY29yZSAgICAgICAgU3RyaW5nCiAgZ2VucmVzICAgICAgIEdlbnJlc09uTW92aWVzW10KICBwb3N0ZXJfaW1hZ2UgU3RyaW5nCiAgdXNlcklkICAgICAgIFN0cmluZz8gICAgICAgICAgQGRiLk9iamVjdElkCiAgVXNlciAgICAgICAgIFVzZXI/ICAgICAgICAgICAgQHJlbGF0aW9uKGZpZWxkczogW3VzZXJJZF0sIHJlZmVyZW5jZXM6IFtpZF0sIG9uRGVsZXRlOiBDYXNjYWRlKQp9Cgptb2RlbCBHZW5yZXMgewogIGlkICAgICBTdHJpbmcgICAgICAgICAgIEBpZCBAZGVmYXVsdChhdXRvKCkpIEBtYXAoIl9pZCIpIEBkYi5PYmplY3RJZAogIG5hbWUgICBTdHJpbmcgICAgICAgICAgIEB1bmlxdWUKICBtb3ZpZXMgR2VucmVzT25Nb3ZpZXNbXQp9Cgptb2RlbCBHZW5yZXNPbk1vdmllcyB7CiAgaWQgICAgICBTdHJpbmcgIEBpZCBAZGVmYXVsdChhdXRvKCkpIEBtYXAoIl9pZCIpIEBkYi5PYmplY3RJZAogIG1vdmllSWQgU3RyaW5nPyBAZGIuT2JqZWN0SWQKICBnZW5yZUlkIFN0cmluZz8gQGRiLk9iamVjdElkCiAgbW92aWUgICBNb3ZpZXM/IEByZWxhdGlvbihmaWVsZHM6IFttb3ZpZUlkXSwgcmVmZXJlbmNlczogW2lkXSkKICBnZW5yZSAgIEdlbnJlcz8gQHJlbGF0aW9uKGZpZWxkczogW2dlbnJlSWRdLCByZWZlcmVuY2VzOiBbaWRdKQp9Cg==",
-  "inlineSchemaHash": "96536e013470ed64c14b844e93cf81792181b32ea68bb49cc1c27819e616b863",
+  "inlineSchema": "Z2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogIG91dHB1dCAgID0gIi4vZ2VuZXJhdGVkL21vbmdvZGJfY2xpZW50Ig0KfQ0KDQpkYXRhc291cmNlIGRiIHsNCiAgcHJvdmlkZXIgPSAibW9uZ29kYiINCiAgdXJsICAgICAgPSBlbnYoIk1PTkdPX0RCX1VSSSIpDQp9DQoNCm1vZGVsIFVzZXIgew0KICBpZCAgICAgU3RyaW5nICAgQGlkIEBkZWZhdWx0KGF1dG8oKSkgQG1hcCgiX2lkIikgQGRiLk9iamVjdElkDQogIGVtYWlsICBTdHJpbmcgICBAdW5pcXVlDQogIG5hbWUgICBTdHJpbmcNCiAgbW92aWVzIE1vdmllc1tdDQp9DQoNCm1vZGVsIE1vdmllcyB7DQogIGlkICAgICAgICAgICBTdHJpbmcgICAgICAgICAgIEBpZCBAZGVmYXVsdChhdXRvKCkpIEBtYXAoIl9pZCIpIEBkYi5PYmplY3RJZA0KICBuYW1lICAgICAgICAgU3RyaW5nDQogIHNjb3JlICAgICAgICBTdHJpbmcNCiAgZ2VucmVzICAgICAgIEdlbnJlc09uTW92aWVzW10NCiAgcG9zdGVyX2ltYWdlIFN0cmluZw0KICB1c2VySWQgICAgICAgU3RyaW5nPyAgICAgICAgICBAZGIuT2JqZWN0SWQNCiAgVXNlciAgICAgICAgIFVzZXI/ICAgICAgICAgICAgQHJlbGF0aW9uKGZpZWxkczogW3VzZXJJZF0sIHJlZmVyZW5jZXM6IFtpZF0sIG9uRGVsZXRlOiBDYXNjYWRlKQ0KfQ0KDQptb2RlbCBHZW5yZXMgew0KICBpZCAgICAgU3RyaW5nICAgICAgICAgICBAaWQgQGRlZmF1bHQoYXV0bygpKSBAbWFwKCJfaWQiKSBAZGIuT2JqZWN0SWQNCiAgbmFtZSAgIFN0cmluZyAgICAgICAgICAgQHVuaXF1ZQ0KICBtb3ZpZXMgR2VucmVzT25Nb3ZpZXNbXQ0KfQ0KDQptb2RlbCBHZW5yZXNPbk1vdmllcyB7DQogIGlkICAgICAgU3RyaW5nICBAaWQgQGRlZmF1bHQoYXV0bygpKSBAbWFwKCJfaWQiKSBAZGIuT2JqZWN0SWQNCiAgbW92aWVJZCBTdHJpbmc/IEBkYi5PYmplY3RJZA0KICBnZW5yZUlkIFN0cmluZz8gQGRiLk9iamVjdElkDQogIG1vdmllICAgTW92aWVzPyBAcmVsYXRpb24oZmllbGRzOiBbbW92aWVJZF0sIHJlZmVyZW5jZXM6IFtpZF0pDQogIGdlbnJlICAgR2VucmVzPyBAcmVsYXRpb24oZmllbGRzOiBbZ2VucmVJZF0sIHJlZmVyZW5jZXM6IFtpZF0pDQp9DQo=",
+  "inlineSchemaHash": "9c0f996f614c86641d77e388508ddf87c489b8747899a487c35da0ed6b70b70a",
   "noEngine": false
 }
 config.dirname = '/'

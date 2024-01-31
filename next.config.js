@@ -3,11 +3,26 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
+                protocol: "https",
+                hostname: "m.imdb.com",
+            },
+            {
+                protocol: "https",
                 hostname: "image.tmdb.org",
-                hostname: "www.google.com"
+            },
+            {
+                protocol: "https",
+                hostname: "themoviedb.org",
+            }, 
+            {
+                protocol: "https",
+                hostname: "www.google.com",
+            }, 
+            {
+                hostname: "www.themoviedb.org",
             }
-        ]
-    }
-}
+        ],
+    },
+};
 
 module.exports = nextConfig

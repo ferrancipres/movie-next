@@ -1,9 +1,11 @@
-import { getMovieByUser } from "@/actions/movie.actions";
-import { setUser } from "@/actions/user.actions";
-import { CardForProfile, DataBaseMovie } from "@/components/Card/Card";
-import ModalButton from "@/components/Modal Button/ModalButton";
+import { getMovieByUser } from "@/lib/movie.actions";
+import { setUser } from "@/lib/user.actions";
+import { CardForProfile } from "@/components/card-profile/CardForProfile";
+import { DataBaseMovie } from "@/components/card-profile/CardForProfile";
+import ModalButton from "@/components/btn-modal/ModalButton";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { getSession } from "@auth0/nextjs-auth0";
+import "./profile.css";
 
 interface User {
   name: string;
@@ -22,19 +24,28 @@ export default withPageAuthRequired(async () => {
     const dataBaseUser: any = await getMovieByUser(user.email);
 
     return (
-      <>
-        <h3>user Profile</h3>
-        <h4>Profile</h4>
-        <p>{user.name}</p>
-        <p>{email}</p>
-        <div>
-          <h4>Movies</h4>
+      <section>
+        <article className="information__container">
+          <div>
+            <img src={session.user.picture} alt="profile" />
+          </div>
+          <div>
+            <p>
+              <strong>Name:</strong> {session.user.name}
+            </p>
+            <p>
+              <strong>Email:</strong> {session.user.email}
+            </p>
+          </div>
+        </article>
+        <ModalButton user={user} />
+        <article>
+          <h4 className="movie__upload">Movies</h4>
           {dataBaseUser.movies.map((movie: DataBaseMovie) => (
             <CardForProfile key={movie.id} data={movie} />
           ))}
-        </div>
-        <ModalButton user={user} />
-      </>
+        </article>
+      </section>
     );
   }
   return <p>Error</p>;

@@ -1,7 +1,8 @@
 "use client";
-// Arreglar que esta hecho una PUTA MIERDA
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";
+import "./movie.css";
 
 interface Movie {
   poster_path: string;
@@ -24,12 +25,10 @@ const MovieDetails = () => {
       fetch(tmdb_URL, {
         method: "GET",
         headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlY2FhMjExZDZiYzZhNDliZjc2ZTQwMmQyMjBjY2Q5OCIsInN1YiI6IjY1NGM5NWM0ZDQ2NTM3MDBmZTM0NGExOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.o0B18r9aPqwWZbDBCX-Yb7KaFTvrsee4NITpaMf2XUg",
-          "Content-Type": "application/json; charset=utf-8",
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMB_API_KEY}`,
         },
       })
-        .then((result) => result.json())
+        .then((res) => res.json())
         .then((data) => {
           setIsLoading(false);
           setMovie(data);
@@ -47,37 +46,43 @@ const MovieDetails = () => {
     return null;
   }
 
-  const imageUrl = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
+  const imageURL = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
+
   return (
-    <section className="details-container">
-      <img className="col movie-img" src={imageUrl} alt={movie.title} />
-      <div className="col movie-details">
-        <p>
-          <strong>Title: </strong>
-          {movie.title}
-        </p>
+    <section className="image__container">
+      <Image
+        src={imageURL}
+        alt={movie.title}
+        className="image__background"
+        height={1000}
+        width={1000}
+        priority
+      />
+
+      <main className="description__container">
+        <div>
+          <img src={imageURL} alt={movie.title} />
+        </div>
+        <div className="text__container">
+          <p>
+            <strong>Title:</strong> {movie.title}
+          </p>
+          <p>
+            <strong>Overview:</strong> {movie.overview}
+          </p>
+          <p>
+            <strong>Genres:</strong>{" "}
+            {movie.genres.map((genre) => genre.name).join(", ")}
+          </p>
+          <p>
+            <strong>Score:</strong> {movie.vote_average}
+          </p>
+          <p>
+            <strong>Language:</strong> {movie.original_language}
+          </p>
+        </div>
         <br />
-        <p>
-          <strong>Description: </strong>
-          {movie.overview}
-        </p>
-        <br />
-        <p>
-          <strong>Genres: </strong>
-          {movie.genres.map((genre) => genre.name).join(", ")}
-        </p>
-        <br />
-        <p>
-          <strong>Score: </strong>
-          {movie.vote_average}
-        </p>
-        <br />
-        <p>
-          <strong>Language: </strong>
-          {movie.original_language}
-        </p>
-        <br />
-      </div>
+      </main>
     </section>
   );
 };

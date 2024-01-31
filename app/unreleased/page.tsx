@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "@/components/card-movie/Card";
-import { getDiscoverMovies } from "@/service/movie.service";
+import { getUnreleasedMovies } from "@/service/movie.service";
 
-async function App() {
-  const moviesTMB = await getDiscoverMovies();
+async function Unreleased() {
+  const moviesTMB = await getUnreleasedMovies();
   return (
     <>
       {moviesTMB.map((movie) => (
@@ -13,4 +13,4 @@ async function App() {
   );
 }
 
-export default App;
+export default Unreleased;
