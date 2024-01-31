@@ -33,7 +33,12 @@ export function CardForProfile({ data, user }: PropsforProfile) {
     <div>
       <div className="card__profile__container">
         <p>{data.name}</p>{" "}
-        <Image src={data.poster_image} width={300} height={300} alt="poster" />
+        <Image
+          src={data.poster_image}
+          width={300}
+          height={350}
+          alt={data.name}
+        />
         <div className="icons__container">
           <DeleteButton id={data.id} />
           <button type="button" onClick={handleOpenModal}>
