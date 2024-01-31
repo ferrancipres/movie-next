@@ -1,4 +1,4 @@
-# MovieMagnet
+# Movie
 
 _Attracting Cinematic Wonders to Your Watchlist._
 

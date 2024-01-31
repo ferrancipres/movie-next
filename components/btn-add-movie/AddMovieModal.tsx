@@ -1,6 +1,6 @@
 "use client";
 import "./AddMovieModal.css";
-import { Modal } from "../modal/Modal";
+import { Modal } from "../Modal/Modal";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { createMovie } from "@/lib/movie.actions";
