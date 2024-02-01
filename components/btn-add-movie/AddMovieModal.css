@@ -19,13 +19,14 @@ input {
     background-color: rgb(238, 233, 233);
 }
 
+
 input[type="submit"] {
     padding: 1rem;
     margin: 0 auto;
     width: 14rem;
     margin-top: 2rem;
 
-    background: var(--seconday-clr);
+    background: var(--secondary-clr);
     color: var(--terciary-clr);
     font-size: 1rem;
     border-radius: 0.313rem;

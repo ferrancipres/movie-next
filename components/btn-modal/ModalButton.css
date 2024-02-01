@@ -1,4 +1,4 @@
-.btn__add {
+.btn__add__movie {
     padding: 1rem;
     margin: 0 auto;
     width: 14rem;
@@ -6,7 +6,7 @@
     cursor: pointer;
 
     color: var(--terciary-clr);
-    background: var(--seconday-clr);
+    background: var(--secondary-clr);
     font-size: 1rem;
     border-radius: 0.313rem;
 }

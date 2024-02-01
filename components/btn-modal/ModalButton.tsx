@@ -15,7 +15,11 @@ export function ModalButton(user: any) {
 
   return (
     <div>
-      <button type="button" onClick={handleOpenModal} className="btn__add">
+      <button
+        type="button"
+        onClick={handleOpenModal}
+        className="btn__add__movie"
+      >
         Add Movie
       </button>
       <AddMovieModal
