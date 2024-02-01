@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@/components/card-movie/Card";
 import { getPopularMovies } from "@/service/movie.service";
 
-async function Popular() {
+const Popular = async () => {
   const moviesTMB = await getPopularMovies();
   return (
     <>
@@ -11,6 +11,6 @@ async function Popular() {
       ))}
     </>
   );
-}
+};
 
 export default Popular;

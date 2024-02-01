@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import Link from "next/link";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <nav className="nav__links">
       <ul>
@@ -20,6 +20,6 @@ function Navbar() {
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;

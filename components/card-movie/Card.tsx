@@ -7,7 +7,7 @@ export type PropsforMovieTMB = {
   data: movieTMB;
 };
 
-export function Card({ data }: PropsforMovieTMB) {
+const Card = ({ data }: PropsforMovieTMB) => {
   return (
     <div className="card">
       <Link href={`/${data.id}`}>
@@ -21,6 +21,6 @@ export function Card({ data }: PropsforMovieTMB) {
       </Link>
     </div>
   );
-}
+};
 
 export default Card;

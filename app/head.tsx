@@ -1,6 +1,6 @@
 import React from "react";
 
-function Head() {
+const Head = () => {
   return (
     <>
       <title>Movie Hub Tracker</title>
@@ -14,6 +14,6 @@ function Head() {
       <link rel="icon" href="/favicon.ico" />
     </>
   );
-}
+};
 
 export default Head;

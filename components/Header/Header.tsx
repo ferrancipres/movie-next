@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "../navbar/Navbar";
 import { getSession } from "@auth0/nextjs-auth0";
 
-async function Header() {
+const Header = async () => {
   const user = await getSession();
 
   return (
@@ -31,6 +31,6 @@ async function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

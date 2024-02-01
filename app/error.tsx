@@ -6,7 +6,7 @@ export type ErrorProps = {
   reset: () => void;
 };
 
-export default function Error({ error, reset }: ErrorProps) {
+export const Error = ({ error, reset }: ErrorProps) => {
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -19,4 +19,4 @@ export default function Error({ error, reset }: ErrorProps) {
       </button>
     </div>
   );
-}
+};

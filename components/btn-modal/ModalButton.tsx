@@ -3,7 +3,7 @@ import "./ModalButton.css";
 import React, { useState } from "react";
 import { AddMovieModal } from "../btn-add-movie/AddMovieModal";
 
-export function ModalButton(user: any) {
+const ModalButton = (user: any) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -29,6 +29,6 @@ export function ModalButton(user: any) {
       />
     </div>
   );
-}
+};
 
 export default ModalButton;

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@/components/card-movie/Card";
 import { getDiscoverMovies } from "@/service/movie.service";
 
-async function App() {
+const App = async () => {
   const moviesTMB = await getDiscoverMovies();
   return (
     <>
@@ -11,6 +11,6 @@ async function App() {
       ))}
     </>
   );
-}
+};
 
 export default App;

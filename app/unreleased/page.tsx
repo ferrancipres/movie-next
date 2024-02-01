@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@/components/card-movie/Card";
 import { getUnreleasedMovies } from "@/service/movie.service";
 
-async function Unreleased() {
+const Unreleased = async () => {
   const moviesTMB = await getUnreleasedMovies();
   return (
     <>
@@ -11,6 +11,6 @@ async function Unreleased() {
       ))}
     </>
   );
-}
+};
 
 export default Unreleased;
