@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { movieTMB } from "@/model/movie.model";
 
-interface PropsforMovieTMB {
+export type PropsforMovieTMB = {
   data: movieTMB;
-}
+};
 
 export function Card({ data }: PropsforMovieTMB) {
   return (

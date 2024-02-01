@@ -7,20 +7,20 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { getSession } from "@auth0/nextjs-auth0";
 import "./profile.css";
 
-interface User {
+export type userProps = {
   name: string;
   email: string;
   id: string;
   movies: DataBaseMovie[];
   picture?: string;
-}
+};
 
 export default withPageAuthRequired(async () => {
   const session = await getSession();
 
   if (session && session.user) {
     const { name, email } = session.user;
-    const user: User = (await setUser(name, email)) as User;
+    const user: userProps = (await setUser(name, email)) as userProps;
     const dataBaseUser: any = await getMovieByUser(user.email);
 
     return (

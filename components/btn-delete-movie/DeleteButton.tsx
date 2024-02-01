@@ -5,7 +5,7 @@ import { deleteMovie } from "@/lib/movie.actions";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useRouter } from "next/navigation";
 
-type Props = {
+export type deleteProps = {
   id: string;
 };
 
@@ -15,7 +15,7 @@ const handleDelete = async (id: string, router: AppRouterInstance) => {
   if (typeof res !== "string") router.refresh();
 };
 
-const DeleteButton: FC<Props> = ({ id }) => {
+const DeleteButton: FC<deleteProps> = ({ id }) => {
   const router = useRouter();
   const handleClick = () => handleDelete(id, router);
   return (

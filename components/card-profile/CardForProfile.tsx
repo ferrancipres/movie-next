@@ -6,19 +6,19 @@ import UpdateButton from "../btn-update-movie/UpdateButton";
 import { useState } from "react";
 import { UpdateMovieModal } from "../btn-update-modal/UpdateMovieModal";
 
-export interface PropsforProfile {
+export type PropsforProfile = {
   data: DataBaseMovie;
   user?: any;
-}
+};
 
-export interface DataBaseMovie {
+export type DataBaseMovie = {
   id: string;
   name: string;
   score: number;
   poster_image: string;
   userId: string;
   genre: string;
-}
+};
 
 export function CardForProfile({ data, user }: PropsforProfile) {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

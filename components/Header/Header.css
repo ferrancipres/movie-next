@@ -20,13 +20,10 @@
 }
 
 .nav__btn {
-    padding: 0.563rem 0.938rem;
-    
-    background-color: var(--seconday-clr);
+    background-color: var(--secondary-clr);
     color: var(--terciary-clr);
-    border: none;
     border-radius: 0.313rem;
+    padding: 0.625rem 1.25rem;
     transition: all 0.3s ease 0s;
-    font-size: 0.875rem;
-    cursor: pointer;
-}
+    font-size: var(--fs-xxs);
+    }

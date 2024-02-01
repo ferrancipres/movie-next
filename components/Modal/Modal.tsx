@@ -3,14 +3,14 @@ import "./Modal.css";
 import React, { useState, useEffect, useRef, FC } from "react";
 import { MdOutlineClose } from "react-icons/md";
 
-type ModalProps = {
+export type modalProps = {
   isOpen: boolean;
   hasCloseBtn?: boolean;
   onClose?: () => void;
   children: React.ReactNode;
 };
 
-export const Modal: FC<ModalProps> = ({
+export const Modal: FC<modalProps> = ({
   isOpen,
   hasCloseBtn,
   onClose,

@@ -5,7 +5,7 @@ import { FC } from "react";
 import { updateMovie } from "@/lib/movie.actions";
 import { FaEdit } from "react-icons/fa";
 
-type Props = {
+export type updateProps = {
   id: string;
   data: any;
 };
@@ -20,7 +20,7 @@ const handleUpdate = async (
   if (typeof res !== "string") router.refresh();
 };
 
-const UpdateButton: FC<Props> = ({ id, data }) => {
+const UpdateButton: FC<updateProps> = ({ id, data }) => {
   const router = useRouter();
   const handleClick = () => handleUpdate(id, data, router);
   return (

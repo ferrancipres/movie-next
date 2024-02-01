@@ -4,18 +4,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 
-interface Movie {
+export type movieProps = {
   poster_path: string;
   title: string;
   overview: string;
   genres: { name: string }[];
   vote_average: number;
   original_language: string;
-}
+};
 
 const MovieDetails = () => {
   const { movieId } = useParams();
-  const [movie, setMovie] = useState<Movie>();
+  const [movie, setMovie] = useState<movieProps>();
   const [isLoading, setIsLoading] = useState(true);
 
   try {

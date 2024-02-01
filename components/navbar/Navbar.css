@@ -16,12 +16,3 @@
     color: var(--secondary-clr);
     font-weight: var(--fw-bold);
 }
-
-.nav__btn {
-background-color: var(--secondary-clr);
-color: var(--terciary-clr);
-border-radius: 0.313rem;
-padding: 0.625rem 1.25rem;
-transition: all 0.3s ease 0s;
-font-size: var(--fs-xxs);
-}
