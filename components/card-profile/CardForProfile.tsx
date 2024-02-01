@@ -20,7 +20,7 @@ export type DataBaseMovie = {
   genre: string;
 };
 
-const CardForProfil = ({ data, user }: PropsforProfile) => {
+export const CardForProfile = ({ data, user }: PropsforProfile) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const handleOpenModal = () => {
     setIsModalOpen(true);

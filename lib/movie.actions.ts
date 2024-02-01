@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 
 // get movie
 export const getMovieByUser = async (email:string) => {
-    try {
         const user = await prisma.user.findUnique({
             where: { email: email },
             include: {
@@ -13,22 +12,16 @@ export const getMovieByUser = async (email:string) => {
                 }
             }
         });
-        return user;
-    } catch (error) {
-        console.error(error);
-    } 
+    return user;
 };
 
 // delete movie
 export const deleteMovie = async (id: string) => {
-    try {
+
         const deletedMovie = await prisma.movies.delete({
             where: { id: id }
         });
-        return deletedMovie
-    } catch (error) {
-        console.error(error);
-    }
+    return deletedMovie || "Can't find movie;"
 };
 
 // create movie
@@ -60,7 +53,7 @@ export const createMovie = async (data: any, userId: string) => {
         });
         return movie;
     } catch (error) {
-        console.error(error);
+        return "Can't create movie";
     }
 };
 
@@ -94,6 +87,6 @@ export const updateMovie = async (data: any) => {
         });
         return updatedMovie;
     } catch (error) {
-        console.error(error);
+        return "Can't update movie";
     }
 }
