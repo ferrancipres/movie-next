@@ -1,7 +1,7 @@
 import "./Card.css";
-import { movieTMB } from "@/model/movie.model";
 import Image from "next/image";
 import Link from "next/link";
+import { movieTMB } from "@/model/movie.model";
 
 interface PropsforMovieTMB {
   data: movieTMB;
@@ -17,7 +17,7 @@ export function Card({ data }: PropsforMovieTMB) {
           height={300}
           alt={data.title}
         />
-        <p className="card_title">{data.title}</p>
+        <p className="card__title">{data.title}</p>
       </Link>
     </div>
   );

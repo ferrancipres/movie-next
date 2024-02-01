@@ -1,9 +1,9 @@
 "use client";
+import { FC } from "react";
+import { FaRegTrashAlt } from "react-icons/fa";
 import { deleteMovie } from "@/lib/movie.actions";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useRouter } from "next/navigation";
-import { FC } from "react";
-import { FaRegTrashAlt } from "react-icons/fa";
 
 type Props = {
   id: string;

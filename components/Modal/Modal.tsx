@@ -1,9 +1,6 @@
 "use client";
-
 import "./Modal.css";
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { FC } from "react";
+import React, { useState, useEffect, useRef, FC } from "react";
 import { MdOutlineClose } from "react-icons/md";
 
 type ModalProps = {

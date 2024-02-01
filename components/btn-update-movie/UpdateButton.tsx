@@ -21,8 +21,6 @@ const handleUpdate = async (
 };
 
 const UpdateButton: FC<Props> = ({ id, data }) => {
-  console.log("dataButton", data);
-  console.log("id", id);
   const router = useRouter();
   const handleClick = () => handleUpdate(id, data, router);
   return (

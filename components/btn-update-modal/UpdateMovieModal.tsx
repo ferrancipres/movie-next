@@ -5,7 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { updateMovie } from "@/lib/movie.actions";
 import { useRouter } from "next/navigation";
 
-type AddMovieModalProps = {
+export type AddMovieModalProps = {
   isOpen: boolean;
   onClose: () => void;
   id: string;
@@ -15,7 +15,7 @@ type AddMovieModalProps = {
   };
 };
 
-type FormValues = {
+export type FormValues = {
   name: string;
   genres: string[];
   score: string;
@@ -53,10 +53,7 @@ export const UpdateMovieModal: React.FC<AddMovieModalProps> = ({
   };
 
   const onSubmit: SubmitHandler<FormValues> = async (data: FormProps) => {
-    console.log("DataSubmit", data, id);
     const dataFull = { ...data, id };
-    console.log("DataFull", dataFull);
-
     await updateMovie(dataFull);
     router.refresh();
     handleCloseModal();
@@ -65,10 +62,10 @@ export const UpdateMovieModal: React.FC<AddMovieModalProps> = ({
 
   return (
     <Modal hasCloseBtn={true} isOpen={isOpen} onClose={onClose}>
-      <main className="modal-wrapper">
+      <main>
         <article className="form">
           <form onSubmit={handleSubmit(onSubmit)} className="form">
-            <p className="form-text">Movie name:</p>
+            <p>Movie name:</p>
             <input
               type="text"
               placeholder="Example123"
@@ -80,7 +77,7 @@ export const UpdateMovieModal: React.FC<AddMovieModalProps> = ({
               </p>
             )}
 
-            <p className="form-text">Genre:</p>
+            <p>Genre:</p>
             <input
               type="test"
               placeholder="Action"
@@ -92,7 +89,7 @@ export const UpdateMovieModal: React.FC<AddMovieModalProps> = ({
               </p>
             )}
 
-            <p className="form-text">Score</p>
+            <p>Score</p>
             <input
               type="number"
               placeholder="0 to 10"
@@ -104,7 +101,7 @@ export const UpdateMovieModal: React.FC<AddMovieModalProps> = ({
               </p>
             )}
 
-            <p className="form-text">Image</p>
+            <p>Image</p>
             <input
               type="text"
               placeholder="imageUrl"

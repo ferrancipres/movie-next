@@ -1,11 +1,12 @@
-.btn-add-movie {
-    background: black;
-    color: white;
+.btn__add {
     padding: 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
     margin: 0 auto;
     width: 14rem;
     margin-top: 2rem;
     cursor: pointer;
+
+    color: var(--terciary-clr);
+    background: var(--seconday-clr);
+    font-size: 1rem;
+    border-radius: 0.313rem;
 }

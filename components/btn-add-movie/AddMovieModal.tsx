@@ -6,7 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { createMovie } from "@/lib/movie.actions";
 import { useRouter } from "next/navigation";
 
-type AddMovieModalProps = {
+export type AddMovieModalProps = {
   isOpen: boolean;
   onClose: () => void;
   user: {
@@ -15,7 +15,7 @@ type AddMovieModalProps = {
   };
 };
 
-type FormValues = {
+export type FormValues = {
   name: string;
   genres: string[];
   score: string;
@@ -60,10 +60,10 @@ export const AddMovieModal: React.FC<AddMovieModalProps> = ({
 
   return (
     <Modal hasCloseBtn={true} isOpen={isOpen} onClose={onClose}>
-      <main className="modal-wrapper">
+      <main>
         <article className="form">
           <form onSubmit={handleSubmit(onSubmit)} className="form">
-            <p className="form-text">Movie name:</p>
+            <p>Movie name:</p>
             <input
               type="text"
               placeholder="Example123"
@@ -75,7 +75,7 @@ export const AddMovieModal: React.FC<AddMovieModalProps> = ({
               </p>
             )}
 
-            <p className="form-text">Genre:</p>
+            <p>Genre:</p>
             <input
               type="test"
               placeholder="Action"
@@ -87,7 +87,7 @@ export const AddMovieModal: React.FC<AddMovieModalProps> = ({
               </p>
             )}
 
-            <p className="form-text">Score</p>
+            <p>Score</p>
             <input
               type="number"
               placeholder="0 to 10"
@@ -99,7 +99,7 @@ export const AddMovieModal: React.FC<AddMovieModalProps> = ({
               </p>
             )}
 
-            <p className="form-text">Image</p>
+            <p>Image</p>
             <input
               type="text"
               placeholder="imageUrl"

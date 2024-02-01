@@ -1,7 +1,7 @@
 "use client";
+import "./CardForProfile.css";
 import Image from "next/image";
 import DeleteButton from "../btn-delete-movie/DeleteButton";
-import "./CardForProfile.css";
 import UpdateButton from "../btn-update-movie/UpdateButton";
 import { useState } from "react";
 import { UpdateMovieModal } from "../btn-update-modal/UpdateMovieModal";
@@ -29,7 +29,6 @@ export function CardForProfile({ data, user }: PropsforProfile) {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  console.log(data);
 
   return (
     <div>

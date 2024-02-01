@@ -1,7 +1,7 @@
 "use client";
+import "./ModalButton.css";
 import React, { useState } from "react";
 import { AddMovieModal } from "../btn-add-movie/AddMovieModal";
-import "./ModalButton.css";
 
 export function ModalButton(user: any) {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -14,8 +14,8 @@ export function ModalButton(user: any) {
   };
 
   return (
-    <div className="btn-container">
-      <button type="button" onClick={handleOpenModal} className="btn-add-movie">
+    <div>
+      <button type="button" onClick={handleOpenModal} className="btn__add">
         Add Movie
       </button>
       <AddMovieModal

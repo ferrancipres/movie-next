@@ -1,6 +1,5 @@
 "use server";
 import { PrismaClient } from "@/prisma/generated/mongodb_client";
-
 const prisma = new PrismaClient();
 
 // get movie by id
@@ -60,7 +59,6 @@ export const createMovie = async (data: any, userId: string) => {
 //update movie
 export const updateMovie = async (data: any) => {
     const { name, poster_image, score, genres, id } = data;
-
 
     try {
         const updatedMovie = await prisma.movies.update({

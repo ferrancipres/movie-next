@@ -1,8 +1,8 @@
 "use client";
+import "./movie.css";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import "./movie.css";
 
 interface Movie {
   poster_path: string;

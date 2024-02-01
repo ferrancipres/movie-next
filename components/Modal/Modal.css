@@ -3,8 +3,9 @@
     width: 30rem;
     height: 40rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 20px rgba(139, 138, 138, 0.137);
-    outline: 2px solid black;
+
+    box-shadow: 0 0 1.25rem rgba(139, 138, 138, 0.137);
+    outline: 0.125rem solid var(--seconday-clr);
     z-index: 100;
     position: fixed;
     background-color:rgb(230, 225, 225)
@@ -13,7 +14,8 @@
 .btn__close {
     margin: 1rem 1rem 2rem 1rem;
     font-size: 1.4rem;
-    width: 2px;
+    width: 0.125rem;
+
     color: rgb(0, 0, 0);
     background-color: transparent;
 }
@@ -21,9 +23,9 @@
 .btn__description {
     font-size: 1rem;
     text-align: left;
-    font-weight: normal;
-    padding-left: 30px;
+    font-weight: var(--fw-medium);
+    padding-left: 1.875rem;
     color:rgb(0, 0, 0);
-    font-weight: bold;
+    font-weight: var(--fw-bold);
 
 }

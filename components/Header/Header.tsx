@@ -5,6 +5,7 @@ import { getSession } from "@auth0/nextjs-auth0";
 
 async function Header() {
   const user = await getSession();
+
   return (
     <header>
       <div className="header__container">
