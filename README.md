@@ -1,4 +1,4 @@
-# Movie
+# Movie Tracker
 
 _Attracting Cinematic Wonders to Your Watchlist._
 
@@ -9,8 +9,6 @@ MovieMagnet is a movies tracking app designed to empower users in discovering, t
 ### Key Features
 
 - **Movie Discovery:** Explore a vast collection of movies and add them to your watchlist.
-- **Watchlist Management:** Keep track of your desired movies and easily manage your watchlist.
-- **Providers Information:** Access information about where you can buy or rent movies based on your current location.
 
 ## Technology Stack
 
