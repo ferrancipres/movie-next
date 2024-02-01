@@ -2,28 +2,36 @@
 import { PrismaClient } from "@/prisma/generated/mongodb_client";
 const prisma = new PrismaClient();
 
-// get movie by id
+// get movie
 export const getMovieByUser = async (email:string) => {
-    const user = await prisma.user.findUnique({
-        where: { email: email },
-        include: {
-            movies: {
-                select: { name: true, poster_image: true, score: true, id: true }
+    try {
+        const user = await prisma.user.findUnique({
+            where: { email: email },
+            include: {
+                movies: {
+                    select: { name: true, poster_image: true, score: true, id: true }
+                }
             }
-        }
-    });
-    return user;
-}
+        });
+        return user;
+    } catch (error) {
+        console.error(error);
+    } 
+};
 
-// delete movie by id
+// delete movie
 export const deleteMovie = async (id: string) => {
-    const deletedMovie = await prisma.movies.delete({
-        where: { id: id }
-    });
-    return deletedMovie || "Can't delete movie";
-}
+    try {
+        const deletedMovie = await prisma.movies.delete({
+            where: { id: id }
+        });
+        return deletedMovie
+    } catch (error) {
+        console.error(error);
+    }
+};
 
-// create
+// create movie
 export const createMovie = async (data: any, userId: string) => {
     const { name, poster_image, score, genres } = data;
     try {
@@ -52,8 +60,8 @@ export const createMovie = async (data: any, userId: string) => {
         });
         return movie;
     } catch (error) {
-        return "Can't create movie";
-}
+        console.error(error);
+    }
 };
 
 //update movie
@@ -86,6 +94,6 @@ export const updateMovie = async (data: any) => {
         });
         return updatedMovie;
     } catch (error) {
-        return "Can't update movie";
+        console.error(error);
     }
 }
